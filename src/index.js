@@ -11,10 +11,10 @@ import craftReducer from './reducers/manageCrafts'
 
 // import reportWebVitals from './reportWebVitals'
 
-
+const store = createStore(craftReducer, applyMiddleware(thunk))
 
 ReactDOM.render(
-  <Provider >
+  <Provider store={store}>
     <React.StrictMode>
       <App />
     </React.StrictMode>

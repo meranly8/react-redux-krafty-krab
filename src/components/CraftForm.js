@@ -1,6 +1,17 @@
 import React, {Component} from 'react'
 
 class CraftForm extends Component {
+    state = {
+        name: '',
+        craft_type: '',
+        description: '',
+        date_started: '',
+        date_completed: '',
+        price: null,
+        date_sold: '',
+        notes: '',
+        image_url: ''
+    }
     
     render(){
         return (

@@ -7,45 +7,54 @@ class CraftForm extends Component {
         description: '',
         date_started: '',
         date_completed: '',
-        price: null,
         date_sold: '',
+        price: '',
         notes: '',
         image_url: ''
     }
-    
+
+    handleOnChange = event => {
+        this.setState({
+            [event.target.name]: event.target.value
+        }, () => console.log(this.state))
+    }
+
     render(){
         return (
             <div>
                 <p><label>Name &nbsp;
-                    <input name="name" required/>
+                    <input onChange={this.handleOnChange} name="name" required value={this.state.name} />
                 </label></p>
                 <p><label>Craft Type &nbsp;
-                    <select name="craft-type" required>
-                        <option selected="Select"></option>
-                        <option value="bracelet">Bracelet</option>
-                        <option value="embroidery">Embroidery</option>
-                        <option value="knit">Knit</option>
-                        <option value="painting">Painting</option>
-                        <option value="pom-poms">Pom Poms</option>
+                    <select onChange={this.handleOnChange} name="craft_type" value={this.state.craft_type} required >
+                        <option value=""></option>
+                        <option value="Bracelet">Bracelet</option>
+                        <option value="Embroidery">Embroidery</option>
+                        <option value="Knit">Knit</option>
+                        <option value="Painting">Painting</option>
+                        <option value="Pom Poms">Pom Poms</option>
                     </select>
                 </label></p>
                 <p><label>Description &nbsp;
-                    <textarea name="description" />
+                    <textarea onChange={this.handleOnChange} name="description" value={this.state.description} />
                 </label></p>
                 <p><label>Date Started &nbsp;
-                    <input type="date" name="date-started" />
+                    <input type="date" onChange={this.handleOnChange} name="date_started" value={this.state.date_started}/>
                 </label></p>
                 <p><label>Date Completed &nbsp;
-                    <input type="date" name="date-completed" />
+                    <input type="date" onChange={this.handleOnChange} name="date_completed" value={this.state.date_completed} />
                 </label></p>
                 <p><label>Date Sold &nbsp;
-                    <input type="date" name="date-sold" />
+                    <input type="date" onChange={this.handleOnChange} name="date_sold" value={this.state.date_sold} />
                 </label></p>
                 <p><label>Price $
-                    <input type="number" name="price" min="0"/>
+                    <input type="number" onChange={this.handleOnChange} name="price" min="0" value={this.state.price} />
                 </label></p>
                 <p><label>Notes &nbsp;
-                    <textarea name="notes" />
+                    <textarea onChange={this.handleOnChange} name="notes" value={this.state.notes} />
+                </label></p>
+                <p><label>Image Link &nbsp;
+                    <input onChange={this.handleOnChange} name="image_url" required value={this.state.image_url} />
                 </label></p>
                 <input type="submit"/><br /><br /><br />
             </div>

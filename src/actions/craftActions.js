@@ -2,6 +2,8 @@ const url = 'http://localhost:3001/crafts'
 
 const setCrafts = crafts => ({type: 'SET_CRAFTS', payload: crafts})
 
+const addCraft = craft => ({type: 'ADD_CRAFT', payload: craft})
+
 export const fetchCrafts = () => {
     return (dispatch) => {
         dispatch({type: 'LOADING'})
@@ -33,6 +35,7 @@ export const createCraft= craft => {
         .then(json => {
             console.log(json)
             const craft = {id: json.data.id, ...json.data.attributes}
+            dispatch(addCraft(craft))
         })
     }
 }

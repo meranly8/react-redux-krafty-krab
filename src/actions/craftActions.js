@@ -16,3 +16,23 @@ export const fetchCrafts = () => {
         })
     }
 }
+
+export const createCraft= craft => {
+    return (dispatch) => {
+        const configObj = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                Accepts: 'application/json'
+            },
+            body: JSON.stringify(craft)
+        }
+
+        fetch(url, configObj)
+        .then(resp => resp.json())
+        .then(json => {
+            console.log(json)
+            const craft = {id: json.data.id, ...json.data.attributes}
+        })
+    }
+}

@@ -1,4 +1,6 @@
 import React, {Component} from 'react'
+import { connect } from 'react-redux'
+import { createCraft } from '../actions/craftActions'
 
 class CraftForm extends Component {
     state = {
@@ -62,4 +64,4 @@ class CraftForm extends Component {
     }
 }
 
-export default CraftForm
+export default connect(null, {createCraft})(CraftForm)

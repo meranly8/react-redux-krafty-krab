@@ -18,4 +18,11 @@ class Crafts extends Component {
     }
 }
 
-export default connect(null, {fetchCrafts})(Crafts)
+const mapStateToProps = state => {
+    return {
+        crafts: state.crafts,
+        loading: state.loading
+    }
+}
+
+export default connect(mapStateToProps, {fetchCrafts})(Crafts)

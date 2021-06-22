@@ -8,7 +8,6 @@ export const fetchCrafts = () => {
         fetch(url)
         .then(resp => resp.json())
         .then(json => {
-            console.log(json)
             const crafts = json.data.map(craft => {
                 return {id: craft.id, ...craft.attributes}
             })

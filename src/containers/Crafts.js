@@ -8,10 +8,17 @@ class Crafts extends Component {
     componentDidMount() {
         this.props.fetchCrafts()
     }
-    
+
+    renderCrafts = () => {
+        return this.props.crafts.map(craft => <CraftCard key={craft.id} craft={craft}/>)
+    }
+
     render(){
         return (
             <div>
+                <ul>
+                    {this.props.loading ? <h3>Loading</h3> : this.renderCrafts()}
+                </ul>
                 < CraftForm />
             </div>
         )

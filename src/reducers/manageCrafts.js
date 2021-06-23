@@ -6,6 +6,9 @@ const manageCrafts = (state = {crafts: [], loading: false}, action) => {
             return {...state, loading: true}
         case 'ADD_CRAFT':
             return {...state, crafts: [...state.crafts, action.payload] }
+        case 'DELETED_CRAFT':
+            const newCrafts = state.crafts.filter(craft => craft.id !== action.payload)
+            return {...state, crafts: newCrafts}
         default:
             return state
     }

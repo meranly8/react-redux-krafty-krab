@@ -1,6 +1,6 @@
 import './App.css'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
-import NavBar from './components/NavBar'
+import NavBarMain from './components/NavBarMain'
 import CraftsContainer from './containers/Crafts'
 import CraftForm from './components/CraftForm'
 
@@ -11,7 +11,7 @@ function App() {
         < Router>
         <header className="App-header">
           <h1>Krafty Krab</h1>
-          < NavBar />
+          < NavBarMain />
         </header>
         <main>
           < Switch>

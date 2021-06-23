@@ -4,6 +4,8 @@ const setCrafts = crafts => ({type: 'SET_CRAFTS', payload: crafts})
 
 const addCraft = craft => ({type: 'ADD_CRAFT', payload: craft})
 
+const deletedCraft = id => ({type: 'DELETED_CRAFT', payload: id})
+
 export const fetchCrafts = () => {
     return (dispatch) => {
         dispatch({type: 'LOADING'})
@@ -33,9 +35,23 @@ export const createCraft= craft => {
         fetch(url, configObj)
         .then(resp => resp.json())
         .then(json => {
-            console.log(json)
             const craft = {id: json.data.id, ...json.data.attributes}
             dispatch(addCraft(craft))
         })
+    }
+}
+
+export const deleteCraft = id => {
+    return (dispatch) => {
+        const configObj = {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json',
+                Accepts: 'application/json'
+            }
+        }
+        fetch(`${url}/${id}`, configObj)
+        .then(resp => resp.json())
+        .then(json => dispatch(deletedCraft(id)))
     }
 }

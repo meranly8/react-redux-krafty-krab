@@ -25,6 +25,8 @@ class Crafts extends Component {
         return (
             <div>
                 < Router >
+                <br />
+                    <h2>Crafts</h2>
                     < NavBarCrafts />
                     {this.props.loading ? <h3>Loading</h3> : null}
                     < Switch >

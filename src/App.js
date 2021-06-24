@@ -9,12 +9,13 @@ import CraftForm from './components/CraftForm'
 function App() {
   return (
     <div className="App">
-        < Router>
+      < Router>
+        <nav className="nav-bar-main">
+            < NavBarMain />
+        </nav>
         <header className="App-header">
           < HeaderMain />
         </header>
-        <br />
-        <nav>< NavBarMain /></nav>
         <main>
           < Switch>
             < Route exact path="/crafts/new"><CraftForm /></ Route>

@@ -15,7 +15,6 @@ export const fetchCrafts = () => {
             const crafts = json.data.map(craft => {
                 return {id: craft.id, ...craft.attributes}
             })
-            console.log(crafts)
             dispatch(setCrafts(crafts))
         })
     }

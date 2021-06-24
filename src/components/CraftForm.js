@@ -18,7 +18,7 @@ class CraftForm extends Component {
     handleOnChange = event => {
         this.setState({
             [event.target.name]: event.target.value
-        }, () => console.log(this.state))
+        })
     }
 
     handleOnSubmit = event => {
@@ -40,6 +40,8 @@ class CraftForm extends Component {
     render(){
         return (
             <div>
+                <br />
+                <h2>New Craft</h2>
                 <form onSubmit={this.handleOnSubmit}>
                     <p><label>Name &nbsp;
                         <input onChange={this.handleOnChange} name="name" required value={this.state.name} />

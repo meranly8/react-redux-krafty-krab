@@ -41,7 +41,7 @@ class CraftForm extends Component {
         return (
             <div>
                 <br />
-                <h2>New Craft</h2>
+                <h2 className="main-header">New Craft</h2>
                 <form onSubmit={this.handleOnSubmit}>
                     <p><label>Name &nbsp;
                         <input onChange={this.handleOnChange} name="name" required value={this.state.name} />

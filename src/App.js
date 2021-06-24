@@ -4,6 +4,7 @@ import HeaderMain from './components/HeaderMain'
 import NavBarMain from './components/NavBarMain'
 import CraftsContainer from './containers/Crafts'
 import CraftForm from './components/CraftForm'
+import Home from './containers/Home'
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
         </header>
         <main>
           < Switch>
+            < Route exact path="/"><Home /></ Route>
             < Route exact path="/crafts/new"><CraftForm /></ Route>
             < Route  path="/crafts"><CraftsContainer /></ Route>
           </ Switch>

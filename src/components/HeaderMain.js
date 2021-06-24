@@ -6,7 +6,7 @@ const HeaderMain = () => {
     return(
         <div>
             <h1>Krafty Krab</h1>
-            <p>{new Date().toLocaleString() + ''}</p>
+            <small>{new Date().toLocaleString() + ''}</small>
         </div>
     )
 }

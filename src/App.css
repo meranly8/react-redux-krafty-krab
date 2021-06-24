@@ -3,7 +3,7 @@
 }
 
 html {
-  background-color: #e1ead7;
+  background-color: #CAD2C1;
 }
 
 .App-logo {
@@ -40,7 +40,8 @@ html {
 
 .current {
   color: black;
-  border-bottom: 1px solid black;
+  border-bottom: 2px solid black;
+  font-weight: bold;
 }
 
 @keyframes App-logo-spin {

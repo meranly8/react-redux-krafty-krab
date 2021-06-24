@@ -26,7 +26,7 @@ class Crafts extends Component {
             <div>
                 < Router >
                 <br />
-                    <h2>Crafts</h2>
+                    <h2 className="main-header">Crafts</h2>
                     < NavBarCrafts />
                     {this.props.loading ? <h3>Loading</h3> : null}
                     < Switch >

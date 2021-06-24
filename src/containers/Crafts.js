@@ -4,7 +4,7 @@ import { fetchCrafts } from '../actions/craftActions'
 import CraftCard from '../components/CraftCard'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import NavBarCrafts from '../components/NavBarCrafts'
-// import Backlog from '../components/Backlog'
+import Backlog from '../components/Backlog'
 
 class Crafts extends Component {
     componentDidMount() {
@@ -13,11 +13,13 @@ class Crafts extends Component {
 
     renderCraftsByType = (craft_type) => {
         const craftsByType = this.props.crafts.filter(craft => craft.craft_type === craft_type)
+        
         return craftsByType.map(craft => <CraftCard key={craft.id} craft={craft}/>)
     }
 
     renderCraftsByStage = stage => {
         const craftsByStage = this.props.crafts.filter(craft => craft[stage] === true)
+        
         return craftsByStage.map(craft => <CraftCard key={craft.id} craft={craft}/>)
     }
 
@@ -54,7 +56,7 @@ class Crafts extends Component {
                                     </ul>
                             </ul>
                         </ Route >
-                        < Route exact path="/crafts/backlog">{this.renderCraftsByStage("backlog")}</Route>
+                        < Route exact path="/crafts/backlog">< Backlog /></Route>
                         < Route exact path="/crafts/wip">{this.renderCraftsByStage("wip")}</Route>
                         < Route exact path="/crafts/inventory">{this.renderCraftsByStage("inventory")}</Route>
                         < Route exact path="/crafts/sold">{this.renderCraftsByStage("sold")}</Route>

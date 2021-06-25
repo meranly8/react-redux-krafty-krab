@@ -5,6 +5,7 @@ import CraftCard from '../components/CraftCard'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import NavBarCrafts from '../components/NavBarCrafts'
 import Backlog from './Backlog'
+import Sold from './Sold'
 
 class Crafts extends Component {
     componentDidMount() {
@@ -57,7 +58,7 @@ class Crafts extends Component {
                         < Route exact path="/crafts/backlog">< Backlog /></Route>
                         < Route exact path="/crafts/wip">{this.renderCraftsByStage("wip")}</Route>
                         < Route exact path="/crafts/inventory">{this.renderCraftsByStage("inventory")}</Route>
-                        < Route exact path="/crafts/sold">{this.renderCraftsByStage("sold")}</Route>
+                        < Route exact path="/crafts/sold">< Sold /></Route>
                     </ Switch >
                 </ Router >
             </div>

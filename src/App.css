@@ -6,17 +6,6 @@ html {
   background-color: #CAD2C1;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 .App-header {
   background-color: #264767;
   min-height: 25vh;
@@ -30,7 +19,7 @@ html {
 
 .main-header {
   text-align: left;
-  padding-left: 3%;
+  padding-left: 10%;
   margin-bottom: 0%;
 }
 
@@ -65,5 +54,19 @@ html {
 
 .nav-bar-craft {
   text-align: left;
-  padding-left: 5%;
+  padding-left: 12%;
+}
+
+.margin-0 {
+  margin-bottom: 0%;
+}
+
+.section-1 {
+  float: left;
+  padding-left: 10%
+}
+
+.justified {
+  text-align: left;
+  padding-left: 3%;
 }

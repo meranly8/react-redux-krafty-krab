@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Backlog = (props) => {    
+const BacklogCard = (props) => {
     return(
         <div>
             <h5 className="margin-0">
@@ -16,4 +16,4 @@ const Backlog = (props) => {
     )
 }
 
-export default Backlog
+export default BacklogCard

@@ -42,6 +42,10 @@ class CraftForm extends Component {
             <div>
                 <br />
                 <h2 className="main-header">New Craft</h2>
+                <div className="main-header"><small>
+                    Additional attributes are added to the craft based on the dates, indicating what stage it is in.<br />
+                    <b>Backlog</b> = no dates, <b>Work In Progress</b> = only Date Started, <b>Inventory</b> = Date Completed &amp; no Date Sold, <b>Sold</b> = Date Sold</small>
+                </div>
                 <form onSubmit={this.handleOnSubmit}>
                     <p><label>Name &nbsp;
                         <input onChange={this.handleOnChange} name="name" required value={this.state.name} />

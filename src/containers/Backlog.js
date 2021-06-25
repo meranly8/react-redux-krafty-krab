@@ -13,11 +13,9 @@ class Backlog extends Component {
 
     render() {
         return (
-            <div>
-                <section>
-                    <h3><u>Most Recent Ideas</u></h3>
-                    {this.renderBacklogCards()}
-                </section>
+            <div >
+                <h3><u>Most Recent Ideas</u></h3>
+                <div >{this.renderBacklogCards()}</div>
             </div>
         )
     }

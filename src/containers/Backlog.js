@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import BacklogCard from '../components/BacklogCard'
-import { fetchCrafts } from '../actions/craftActions'
 
 class Backlog extends Component {
     renderBacklogCards = () => {
@@ -24,8 +23,7 @@ class Backlog extends Component {
 const mapStateToProps = state => {
     return {
         crafts: state.crafts,
-        loading: state.loading
     }
 }
 
-export default connect(mapStateToProps, { fetchCrafts })(Backlog)
+export default connect(mapStateToProps)(Backlog)

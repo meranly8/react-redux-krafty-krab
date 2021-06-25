@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import Backlog from '../components/Backlog'
+import Backlog from './Backlog'
 import { fetchCrafts } from '../actions/craftActions'
 
 class Home extends Component {
@@ -8,16 +8,20 @@ class Home extends Component {
         this.props.fetchCrafts()
     }
 
-    inventory = this.props.crafts.filter(craft => craft.inventory === true)
-    
+    stage = (stage) => this.props.crafts.filter(craft => craft[stage] === true)
+
     render(){
         return (
-            <div>
-                <section>
+            <div><br />
+                <section className="section-1">
                     < Backlog />
                 </section>
                 <section>
-                    Total Crafts in Inventory: {this.inventory.length}
+                    <h3><u>Totals by Craft Stage</u></h3>
+                    <p>Backlog: {this.stage("backlog").length}</p>
+                    <p>Work in Progress: {this.stage("wip").length}</p>
+                    <p>Inventory: {this.stage("inventory").length}</p>
+                    <p>Sold: {this.stage("sold").length}</p>
                 </section>
             </div>
         )

@@ -5,6 +5,7 @@ import NavBarMain from './components/NavBarMain'
 import CraftsContainer from './containers/Crafts'
 import CraftForm from './components/CraftForm'
 import Home from './containers/Home'
+import Footer from './components/Footer'
 
 
 function App() {
@@ -24,6 +25,9 @@ function App() {
             < Route  path="/crafts"><CraftsContainer /></ Route>
           </ Switch>
         </main>
+        <footer>
+          < Footer />
+        </footer>
       </ Router>
     </div>
     

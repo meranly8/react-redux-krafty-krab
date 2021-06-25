@@ -33,28 +33,26 @@ class Crafts extends Component {
                     {this.props.loading ? <h3>Loading</h3> : null}
                     < Switch >
                         < Route exact path="/crafts">
-                            <ul>
-                                <h4><u>Bracelets</u> ({this.renderCraftsByType("Bracelet").length})</h4>
-                                    <ul>
-                                        {this.renderCraftsByType("Bracelet")}
-                                    </ul>
-                                <h4><u>Embroideries</u> ({this.renderCraftsByType("Embroidery").length})</h4>
-                                    <ul>
-                                        {this.renderCraftsByType("Embroidery")}
-                                    </ul>
-                                <h4><u>Knits</u> ({this.renderCraftsByType("Knit").length})</h4>
-                                    <ul>
-                                        {this.renderCraftsByType("Knit")}
-                                    </ul>
-                                <h4><u>Paintings</u> ({this.renderCraftsByType("Painting").length})</h4>
-                                    <ul>
-                                        {this.renderCraftsByType("Painting")}
-                                    </ul>
-                                <h4><u>Pom Poms</u> ({this.renderCraftsByType("Pom Poms").length})</h4>
-                                    <ul>
-                                        {this.renderCraftsByType("Pom Poms")}
-                                    </ul>
-                            </ul>
+                            <h4 className="margin-0"><u>Bracelets</u> ({this.renderCraftsByType("Bracelet").length})</h4>
+                                <span>
+                                    {this.renderCraftsByType("Bracelet")}
+                                </span>
+                            <h4 className="margin-0"><u>Embroideries</u> ({this.renderCraftsByType("Embroidery").length})</h4>
+                                <span>
+                                    {this.renderCraftsByType("Embroidery")}
+                                </span>
+                            <h4 className="margin-0"><u>Knits</u> ({this.renderCraftsByType("Knit").length})</h4>
+                                <span>
+                                    {this.renderCraftsByType("Knit")}
+                                </span>
+                            <h4 className="margin-0"><u>Paintings</u> ({this.renderCraftsByType("Painting").length})</h4>
+                                <span>
+                                    {this.renderCraftsByType("Painting")}
+                                </span>
+                            <h4 className="margin-0"><u>Pom Poms</u> ({this.renderCraftsByType("Pom Poms").length})</h4>
+                                <span>
+                                    {this.renderCraftsByType("Pom Poms")}
+                                </span>
                         </ Route >
                         < Route exact path="/crafts/backlog">< Backlog /></Route>
                         < Route exact path="/crafts/wip">{this.renderCraftsByStage("wip")}</Route>

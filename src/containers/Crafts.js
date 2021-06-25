@@ -4,7 +4,7 @@ import { fetchCrafts } from '../actions/craftActions'
 import CraftCard from '../components/CraftCard'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import NavBarCrafts from '../components/NavBarCrafts'
-import Backlog from '../components/Backlog'
+import Backlog from './Backlog'
 
 class Crafts extends Component {
     componentDidMount() {

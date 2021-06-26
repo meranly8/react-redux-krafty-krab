@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { deleteCraft } from '../actions/craftActions'
+import { deleteCraft } from '../../actions/craftActions'
 
 const CraftCard = props => {
     return (

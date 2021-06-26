@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import { connect } from 'react-redux'
-import { createCraft } from '../actions/craftActions'
+import { createCraft } from '../../actions/craftActions'
+import { withRouter } from 'react-router-dom'
 
 class CraftForm extends Component {
     state = {
@@ -35,6 +36,7 @@ class CraftForm extends Component {
             notes: '',
             image_url: ''
         })
+        this.props.history.push("/crafts")
     }
 
     render(){
@@ -44,7 +46,7 @@ class CraftForm extends Component {
                 <h2 className="main-header">New Craft</h2>
                 <div className="main-header"><small>
                     Additional attributes are added to the craft based on the dates, indicating what stage it is in.<br />
-                    <b>Backlog</b> = no dates, <b>Work In Progress</b> = only Date Started, <b>Inventory</b> = Date Completed &amp; no Date Sold, <b>Sold</b> = Date Sold</small>
+                    <b>Backlog</b> = no dates, <b>Work In Progress</b> = Date Started &amp; no Date Completed, <b>Inventory</b> = Date Completed &amp; no Date Sold, <b>Sold</b> = Date Sold</small>
                 </div>
                 <form onSubmit={this.handleOnSubmit}>
                     <p><label>Name &nbsp;
@@ -88,4 +90,4 @@ class CraftForm extends Component {
     }
 }
 
-export default connect(null, {createCraft})(CraftForm)
+export default connect(null, {createCraft})(withRouter(CraftForm))

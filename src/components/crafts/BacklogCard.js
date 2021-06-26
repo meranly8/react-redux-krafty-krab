@@ -1,4 +1,6 @@
 import React from 'react'
+import { connect } from 'react-redux'
+import { deleteCraft } from '../../actions/craftActions'
 
 const BacklogCard = (props) => {
     return(
@@ -16,4 +18,4 @@ const BacklogCard = (props) => {
     )
 }
 
-export default BacklogCard
+export default connect(null, { deleteCraft})(BacklogCard)

@@ -16,7 +16,7 @@ const NavBarMain = () => {
                 <NavLink to="/crafts" exact style={style} activeClassName="current">Crafts</NavLink><br /><br />
             </div>
             <div className="link">
-                <NavLink to="/crafts/new" exact style={style} activeClassName="current">New Craft</NavLink><br /><br />
+                <NavLink to="/crafts/new" exact style={style} activeClassName="current">Add Craft</NavLink><br /><br />
             </div>
         </section>
     )

@@ -46,10 +46,6 @@ class Crafts extends Component {
                                 <span>
                                     {this.renderCraftsByType("Knit")}
                                 </span>
-                            <h4 className="margin-0"><u>Paintings</u> ({this.renderCraftsByType("Painting").length})</h4>
-                                <span>
-                                    {this.renderCraftsByType("Painting")}
-                                </span>
                             <h4 className="margin-0"><u>Pom Poms</u> ({this.renderCraftsByType("Pom Poms").length})</h4>
                                 <span>
                                     {this.renderCraftsByType("Pom Poms")}

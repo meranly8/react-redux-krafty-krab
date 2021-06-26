@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import HeaderMain from './components/HeaderMain'
 import NavBarMain from './components/NavBarMain'
 import CraftsContainer from './containers/Crafts'
-import CraftForm from './components/CraftForm'
+import CraftForm from './components/crafts/CraftForm'
 import Home from './containers/Home'
 import Footer from './components/Footer'
 
@@ -20,9 +20,9 @@ function App() {
         </header>
         <main>
           < Switch>
-            < Route exact path="/"><Home /></ Route>
-            < Route exact path="/crafts/new"><CraftForm /></ Route>
-            < Route  path="/crafts"><CraftsContainer /></ Route>
+            < Route exact path="/">< Home /></ Route>
+            < Route exact path="/crafts/new">< CraftForm /> </Route>
+            < Route path="/crafts">< CraftsContainer /></ Route>
           </ Switch>
         </main>
         <footer>

@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import { connect } from 'react-redux'
 import { fetchCrafts } from '../actions/craftActions'
-import CraftCard from '../components/CraftCard'
+import CraftCard from '../components/crafts/CraftCard'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import NavBarCrafts from '../components/NavBarCrafts'
 import Backlog from './Backlog'

@@ -1,7 +1,13 @@
-const manageCrafts = (state = {crafts: [], loading: false}, action) => {
+const manageCrafts = (state = {crafts: [], loading: false, total: 0}, action) => {
     switch(action.type){
         case 'SET_CRAFTS':
-        return {...state, crafts: action.payload, loading: false}
+            state = {...state, crafts: action.payload, loading: false}
+
+            const sold = state.crafts.filter(craft => craft.sold === true)
+            const prices = sold.map(craft => craft.price)
+            const sum = prices.reduce((total, price) => total + price)
+
+            return {...state, crafts: action.payload, loading: false, total: sum}
         case 'LOADING':
             return {...state, loading: true}
         case 'ADD_CRAFT':

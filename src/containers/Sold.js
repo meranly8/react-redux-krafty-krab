@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import SoldCard from '../components/SoldCard'
+import SoldCard from '../components/crafts/SoldCard'
 
 class Sold extends Component {
     renderSoldCards = () => {

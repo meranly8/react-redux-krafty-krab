@@ -1,4 +1,6 @@
 import React from 'react'
+import { connect } from 'react-redux'
+import { deleteCraft } from '../actions/craftActions'
 
 const SoldCard = (props) => {    
     return(
@@ -14,4 +16,4 @@ const SoldCard = (props) => {
     )
 }
 
-export default SoldCard
+export default connect(null, { deleteCraft })(SoldCard)

@@ -12,7 +12,6 @@ class CraftForm extends Component {
         date_completed: '',
         date_sold: '',
         price: '',
-        notes: '',
         image_url: ''
     }
 
@@ -33,7 +32,6 @@ class CraftForm extends Component {
             date_completed: '',
             date_sold: '',
             price: '',
-            notes: '',
             image_url: ''
         })
         this.props.history.push("/crafts")

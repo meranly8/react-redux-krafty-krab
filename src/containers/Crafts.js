@@ -14,8 +14,8 @@ class Crafts extends Component {
 
     renderCraftsByType = (craft_type) => {
         const craftsByType = this.props.crafts.filter(craft => craft.craft_type === craft_type)
-        
-        return craftsByType.map(craft => <CraftCard key={craft.id} craft={craft}/>)
+        const sorted = craftsByType.sort((a, b) => a.name > b.name ? 1 : -1)
+        return sorted.map(craft => <CraftCard key={craft.id} craft={craft}/>)
     }
 
     renderCraftsByStage = stage => {
@@ -30,26 +30,36 @@ class Crafts extends Component {
                 < Router >
                 <br />
                     <h2 className="main-header">Crafts</h2>
-                    < NavBarCrafts />
+                    < NavBarCrafts /><br />
                     {this.props.loading ? <h3>Loading</h3> : null}
                     < Switch >
                         < Route exact path="/crafts">
-                            <h4 className="margin-0"><u>Bracelets</u> ({this.renderCraftsByType("Bracelet").length})</h4>
-                                <span>
-                                    {this.renderCraftsByType("Bracelet")}
-                                </span>
-                            <h4 className="margin-0"><u>Embroideries</u> ({this.renderCraftsByType("Embroidery").length})</h4>
-                                <span>
-                                    {this.renderCraftsByType("Embroidery")}
-                                </span>
-                            <h4 className="margin-0"><u>Knits</u> ({this.renderCraftsByType("Knit").length})</h4>
-                                <span>
-                                    {this.renderCraftsByType("Knit")}
-                                </span>
-                            <h4 className="margin-0"><u>Pom Poms</u> ({this.renderCraftsByType("Pom Poms").length})</h4>
-                                <span>
-                                    {this.renderCraftsByType("Pom Poms")}
-                                </span>
+                            <div className="grid-container">
+                                <section>
+                                    <h4 className="margin-0"><u>Bracelets</u> ({this.renderCraftsByType("Bracelet").length})</h4>
+                                        <span>
+                                            {this.renderCraftsByType("Bracelet")}
+                                        </span>
+                                </section>
+                                <section className="App">
+                                    <h4 className="margin-0"><u>Embroideries</u> ({this.renderCraftsByType("Embroidery").length})</h4>
+                                        <span>
+                                            {this.renderCraftsByType("Embroidery")}
+                                        </span>
+                                </section>
+                                <section>
+                                    <h4 className="margin-0"><u>Knits</u> ({this.renderCraftsByType("Knit").length})</h4>
+                                        <span>
+                                            {this.renderCraftsByType("Knit")}
+                                        </span>
+                                </section>
+                                <section>
+                                    <h4 className="margin-0"><u>Pom Poms</u> ({this.renderCraftsByType("Pom Poms").length})</h4>
+                                        <span>
+                                            {this.renderCraftsByType("Pom Poms")}
+                                        </span>
+                                </section>
+                            </div>
                         </ Route >
                         < Route exact path="/crafts/backlog">< Backlog /></Route>
                         < Route exact path="/crafts/wip">{this.renderCraftsByStage("wip")}</Route>

@@ -2,7 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { deleteCraft } from '../../actions/craftActions'
 
-const SoldCard = (props) => {    
+const SoldCard = (props) => {
     return(
         <div>
             Sold on {props.craft.date_sold}

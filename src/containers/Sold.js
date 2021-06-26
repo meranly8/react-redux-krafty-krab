@@ -3,18 +3,19 @@ import { connect } from 'react-redux'
 import SoldCard from '../components/crafts/SoldCard'
 
 class Sold extends Component {
+    sold = this.props.crafts.filter(craft => craft.sold === true)
+    
     renderSoldCards = () => {
-        const sold = this.props.crafts.filter(craft => craft.sold === true)
-        const sorted = sold.sort((a, b) => a.date_sold > b.date_sold ? 1 : -1)
+        const sorted = this.sold.sort((a, b) => a.date_sold > b.date_sold ? 1 : -1)
         return sorted.map(craft => < SoldCard key={craft.id} craft={craft}/>)
     }
 
     render() {
         return (
-            <div >
-                <h3><u>Crafts Sold</u></h3>
+            <div>
+                <h3><u>Crafts Sold:</u> {this.sold.length}</h3>
                 <h4>Total: ${this.props.total}</h4>
-                <div >{this.renderSoldCards()}</div>
+                <div className="grid-container">{this.renderSoldCards()}</div>
             </div>
         )
     }

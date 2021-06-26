@@ -77,9 +77,6 @@ class CraftForm extends Component {
                     <p><label>Price $
                         <input type="number" onChange={this.handleOnChange} name="price" min="0" value={this.state.price} />
                     </label></p>
-                    <p><label>Notes &nbsp;
-                        <textarea onChange={this.handleOnChange} name="notes" value={this.state.notes} />
-                    </label></p>
                     <p><label>Image Link &nbsp;
                         <input onChange={this.handleOnChange} name="image_url" value={this.state.image_url} />
                     </label></p>

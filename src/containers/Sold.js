@@ -13,6 +13,7 @@ class Sold extends Component {
         return (
             <div >
                 <h3><u>Crafts Sold</u></h3>
+                <h4>Total: ${this.props.total}</h4>
                 <div >{this.renderSoldCards()}</div>
             </div>
         )
@@ -21,7 +22,8 @@ class Sold extends Component {
 
 const mapStateToProps = state => {
     return {
-        crafts: state.crafts
+        crafts: state.crafts,
+        total: state.total
     }
 }
 

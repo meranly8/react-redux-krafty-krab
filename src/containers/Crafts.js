@@ -4,8 +4,8 @@ import { fetchCrafts } from '../actions/craftActions'
 import CraftCard from '../components/crafts/CraftCard'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import NavBarCrafts from '../components/NavBarCrafts'
-import Backlog from './Backlog'
-import Sold from './Sold'
+import BacklogCard from '../components/crafts/BacklogCard'
+import SoldCard from '../components/crafts/SoldCard'
 
 class Crafts extends Component {
     componentDidMount() {
@@ -22,6 +22,18 @@ class Crafts extends Component {
         const craftsByStage = this.props.crafts.filter(craft => craft[stage] === true)
         
         return craftsByStage.map(craft => <CraftCard key={craft.id} craft={craft}/>)
+    }
+
+    renderBacklogCards = () => {
+        const backlog = this.props.crafts.filter(craft => craft["backlog"] === true)
+        const sorted = backlog.sort((a, b) => a.created_at < b.created_at ? 1 : -1)
+        return sorted.map(craft => < BacklogCard key={craft.id} craft={craft}/>)
+    }
+
+    renderSoldCards = () => {
+        const sold = this.props.crafts.filter(craft => craft["sold"] === true)
+        const sorted = sold.sort((a, b) => a.created_at < b.created_at ? 1 : -1)
+        return sorted.map(craft => < SoldCard key={craft.id} craft={craft}/>)
     }
 
     render(){
@@ -61,10 +73,21 @@ class Crafts extends Component {
                                 </section>
                             </div>
                         </ Route >
-                        < Route exact path="/crafts/backlog">< Backlog /></Route>
+                        < Route exact path="/crafts/backlog">
+                            <div >
+                                <h3><u>Ideas</u></h3>
+                                {this.renderBacklogCards()}
+                            </div>
+                        </Route>
                         < Route exact path="/crafts/wip">{this.renderCraftsByStage("wip")}</Route>
                         < Route exact path="/crafts/inventory">{this.renderCraftsByStage("inventory")}</Route>
-                        < Route exact path="/crafts/sold">< Sold /></Route>
+                        < Route exact path="/crafts/sold">
+                            <div>
+                                <h3 className="margin-bottom-0"><u>Crafts Sold:</u> {this.renderSoldCards().length}</h3>
+                                <h4 className="margin-0">Total: ${this.props.total}</h4><br />
+                                <div className="grid-container">{this.renderSoldCards()}</div>
+                            </div>
+                        </Route>
                     </ Switch >
                 </ Router >
             </div>
@@ -75,7 +98,8 @@ class Crafts extends Component {
 const mapStateToProps = state => {
     return {
         crafts: state.crafts,
-        loading: state.loading
+        loading: state.loading,
+        total: state.total
     }
 }
 

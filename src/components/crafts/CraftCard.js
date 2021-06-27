@@ -17,9 +17,9 @@ const CraftCard = props => {
     
     return (
         <div>
-            <p>{props.craft.name} <small>({stage()})</small></p>
+            <p className="margin-bottom-0">{props.craft.name} <small>({stage()})</small> </p>
         </div>
     )
 }
 
-export default connect(null, {deleteCraft})(CraftCard)
+export default connect(null, { deleteCraft })(CraftCard)

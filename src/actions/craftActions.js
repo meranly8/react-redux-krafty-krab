@@ -51,6 +51,9 @@ export const deleteCraft = id => {
         }
         fetch(`${url}/${id}`, configObj)
         .then(resp => resp.json())
-        .then(json => dispatch(deletedCraft(id)))
+        .then(json => {
+            dispatch(deletedCraft(id))
+            alert(json.message)
+        })
     }
 }

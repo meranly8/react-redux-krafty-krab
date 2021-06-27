@@ -56,37 +56,39 @@ class Crafts extends Component {
                     <h2 className="main-header">Crafts</h2>
                     < NavBarCrafts /><br />
                     {this.props.loading ? <h3>Loading</h3> : null}
-                    < Switch >
-                        < Route exact path="/crafts">
-                            <h2>{this.props.crafts.length} Crafts Total</h2>
-                            < CraftsByType crafts={this.props.crafts} />
-                        </ Route >
-                        < Route exact path="/crafts/backlog">
-                            <div >
-                                <h2>{this.renderBacklogCards().length} Ideas in Backlog</h2>
-                                <div>{this.renderBacklogCards()}</div>
-                            </div>
-                        </Route>
-                        < Route exact path="/crafts/wip">
-                            <div>
-                                <h2>{this.renderWIPCards().length} Work in Progress</h2>
-                                <div>{this.renderWIPCards()}</div>
-                            </div>
-                        </Route>
-                        < Route exact path="/crafts/inventory">
-                            <div>
-                                <h2>{this.renderInventoryCards().length} Crafts in Inventory</h2>
-                                <div className="grid-container-crafts">{this.renderInventoryCards()}</div>
-                            </div>
-                        </Route>
-                        < Route exact path="/crafts/sold">
-                            <div>
-                                <h2 className="margin-bottom-0">{this.renderSoldCards().length} Crafts Sold</h2>
-                                <h4 className="margin-0">Total: ${this.props.total}</h4><br />
-                                <div className="grid-container-crafts">{this.renderSoldCards()}</div>
-                            </div>
-                        </Route>
-                    </ Switch >
+                    <div className="padding-left">
+                        < Switch >
+                            < Route exact path="/crafts">
+                                <h2>{this.props.crafts.length} Crafts Total</h2>
+                                < CraftsByType crafts={this.props.crafts} />
+                            </ Route >
+                            < Route exact path="/crafts/backlog">
+                                <div >
+                                    <h2>{this.renderBacklogCards().length} Ideas in Backlog</h2>
+                                    <div>{this.renderBacklogCards()}</div>
+                                </div>
+                            </Route>
+                            < Route exact path="/crafts/wip">
+                                <div>
+                                    <h2>{this.renderWIPCards().length} Work in Progress</h2>
+                                    <div>{this.renderWIPCards()}</div>
+                                </div>
+                            </Route>
+                            < Route exact path="/crafts/inventory">
+                                <div>
+                                    <h2>{this.renderInventoryCards().length} Crafts in Inventory</h2>
+                                    <div className="grid-container-crafts">{this.renderInventoryCards()}</div>
+                                </div>
+                            </Route>
+                            < Route exact path="/crafts/sold">
+                                <div>
+                                    <h2 className="margin-bottom-0">{this.renderSoldCards().length} Crafts Sold</h2>
+                                    <h4 className="margin-0">Total: ${this.props.total}</h4><br />
+                                    <div className="grid-container-crafts">{this.renderSoldCards()}</div>
+                                </div>
+                            </Route>
+                        </ Switch >
+                    </div>
                 </ Router >
             </div>
         )

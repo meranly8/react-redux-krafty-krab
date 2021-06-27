@@ -56,7 +56,7 @@ class Crafts extends Component {
                     {this.props.loading ? <h3>Loading</h3> : null}
                     < Switch >
                         < Route exact path="/crafts">
-                            <div className="grid-container">
+                            <div className="grid-container-all">
                                 <section>
                                     <h4 className="margin-0"><u>Bracelets</u> ({this.renderCraftsByType("Bracelet").length})</h4>
                                         <span>
@@ -98,14 +98,14 @@ class Crafts extends Component {
                         < Route exact path="/crafts/inventory">
                             <div>
                                 <h3><u>Inventory:</u> {this.renderInventoryCards().length}</h3>
-                                <div>{this.renderInventoryCards()}</div>
+                                <div className="grid-container-crafts">{this.renderInventoryCards()}</div>
                             </div>
                         </Route>
                         < Route exact path="/crafts/sold">
                             <div>
                                 <h3 className="margin-bottom-0"><u>Crafts Sold:</u> {this.renderSoldCards().length}</h3>
                                 <h4 className="margin-0">Total: ${this.props.total}</h4><br />
-                                <div>{this.renderSoldCards()}</div>
+                                <div className="grid-container-crafts">{this.renderSoldCards()}</div>
                             </div>
                         </Route>
                     </ Switch >

@@ -7,15 +7,15 @@ const BacklogCard = (props) => {
         <div>
             <h5 className="margin-bottom-0">
                 {props.craft.created_at}: {props.craft.name} - {props.craft.craft_type} &nbsp;
-                {window.location.pathname === "/crafts/backlog" ? (
-                    <button onClick={() => props.deleteCraft(props.craft.id)}>Delete</button> 
-                    ) : (
-                    null
-                )}
             </h5>
             {props.craft.description}
+            {window.location.pathname === "/crafts/backlog" ? (
+                <button onClick={() => props.deleteCraft(props.craft.id)}>Delete</button>
+                ) : (
+                null
+            )}
         </div>
     )
 }
 
-export default connect(null, { deleteCraft})(BacklogCard)
+export default connect(null, { deleteCraft })(BacklogCard)

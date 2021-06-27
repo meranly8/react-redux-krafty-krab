@@ -5,7 +5,7 @@ import { fetchCrafts } from '../actions/craftActions'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import NavBarCrafts from '../components/NavBarCrafts'
 
-import CraftCard from '../components/crafts/CraftCard'
+import CraftsByType from '../components/crafts/CraftsByType'
 import BacklogCard from '../components/crafts/BacklogCard'
 import WIPCard from '../components/crafts/WIPCard'
 import InventoryCard from '../components/crafts/InventoryCard'
@@ -14,12 +14,6 @@ import SoldCard from '../components/crafts/SoldCard'
 class Crafts extends Component {
     componentDidMount() {
         this.props.fetchCrafts()
-    }
-
-    renderCraftsByType = (craft_type) => {
-        const craftsByType = this.props.crafts.filter(craft => craft.craft_type === craft_type)
-        const sorted = craftsByType.sort((a, b) => a.name > b.name ? 1 : -1)
-        return sorted.map(craft => <CraftCard key={craft.id} craft={craft}/>)
     }
 
     getDaysSince(start, from = new Date()) {
@@ -54,8 +48,6 @@ class Crafts extends Component {
         return sortedSold.map(craft => < SoldCard key={craft.id} craft={craft}/>)
     }
 
-    
-
     render(){
         return (
             <div>
@@ -66,54 +58,30 @@ class Crafts extends Component {
                     {this.props.loading ? <h3>Loading</h3> : null}
                     < Switch >
                         < Route exact path="/crafts">
-                            <div className="grid-container-all">
-                                <section>
-                                    <h4 className="margin-0"><u>Bracelets</u> ({this.renderCraftsByType("Bracelet").length})</h4>
-                                        <span>
-                                            {this.renderCraftsByType("Bracelet")}
-                                        </span>
-                                </section>
-                                <section className="App">
-                                    <h4 className="margin-0"><u>Embroideries</u> ({this.renderCraftsByType("Embroidery").length})</h4>
-                                        <span>
-                                            {this.renderCraftsByType("Embroidery")}
-                                        </span>
-                                </section>
-                                <section>
-                                    <h4 className="margin-0"><u>Knits</u> ({this.renderCraftsByType("Knit").length})</h4>
-                                        <span>
-                                            {this.renderCraftsByType("Knit")}
-                                        </span>
-                                </section>
-                                <section>
-                                    <h4 className="margin-0"><u>Pom Poms</u> ({this.renderCraftsByType("Pom Poms").length})</h4>
-                                        <span>
-                                            {this.renderCraftsByType("Pom Poms")}
-                                        </span>
-                                </section>
-                            </div>
+                            <h2>{this.props.crafts.length} Crafts Total</h2>
+                            < CraftsByType crafts={this.props.crafts} />
                         </ Route >
                         < Route exact path="/crafts/backlog">
                             <div >
-                                <h3><u>Ideas:</u> {this.renderBacklogCards().length}</h3>
+                                <h2>{this.renderBacklogCards().length} Ideas in Backlog</h2>
                                 <div>{this.renderBacklogCards()}</div>
                             </div>
                         </Route>
                         < Route exact path="/crafts/wip">
                             <div>
-                                <h3><u>Work in Progress:</u> {this.renderWIPCards().length}</h3>
+                                <h2>{this.renderWIPCards().length} Work in Progress</h2>
                                 <div>{this.renderWIPCards()}</div>
                             </div>
                         </Route>
                         < Route exact path="/crafts/inventory">
                             <div>
-                                <h3><u>Inventory:</u> {this.renderInventoryCards().length}</h3>
+                                <h2>{this.renderInventoryCards().length} Crafts in Inventory</h2>
                                 <div className="grid-container-crafts">{this.renderInventoryCards()}</div>
                             </div>
                         </Route>
                         < Route exact path="/crafts/sold">
                             <div>
-                                <h3 className="margin-bottom-0"><u>Crafts Sold:</u> {this.renderSoldCards().length}</h3>
+                                <h2 className="margin-bottom-0">{this.renderSoldCards().length} Crafts Sold</h2>
                                 <h4 className="margin-0">Total: ${this.props.total}</h4><br />
                                 <div className="grid-container-crafts">{this.renderSoldCards()}</div>
                             </div>

@@ -11,7 +11,7 @@ const SoldCard = (props) => {
             </h5>
             {props.craft.description}<br />
             {props.craft.image_url === null || props.craft.image_url === "" ? null : <img src={props.craft.image_url} alt={props.craft.name} /> }<br />
-            <button onClick={() => props.deleteCraft(props.craft.id)}>Delete</button>
+            <button onClick={() => props.deleteCraft(props.craft.id)}>Delete</button><br/><br/>
         </div>
     )
 }

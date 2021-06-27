@@ -2,22 +2,15 @@ import React from 'react'
 import { NavLink } from 'react-router-dom'
 
 const NavBarMain = () => {
-    const style = {
-        textDecoration: 'none', color: 'white'
-    }
-    
+   
     return(
         <section>
-            <br /><br />
-            <div className="link">
-                <NavLink to="/" exact style={style} activeClassName="current">Home</NavLink><br /><br />
-            </div>
-            <div className="link">
-                <NavLink to="/crafts" exact style={style} activeClassName="current">Crafts</NavLink><br /><br />
-            </div>
-            <div className="link">
-                <NavLink to="/crafts/new" exact style={style} activeClassName="current">Add Craft</NavLink><br /><br />
-            </div>
+            <br />
+            <NavLink to="/" exact className="link-main" activeClassName="current-main">Home</NavLink><br /><br />
+            <NavLink to="/crafts" exact className="link-main" activeClassName="current-main">Crafts</NavLink><br /><br />
+            <NavLink to="/crafts/gallery" exact className="link-main" activeClassName="current-main">Gallery</NavLink><br /><br />
+            <NavLink to="/crafts/index" exact className="link-main" activeClassName="current-main">Index</NavLink><br /><br />
+            <NavLink to="/crafts/new" exact className="link-main" activeClassName="current-main">Add Craft</NavLink><br /><br />
         </section>
     )
 }

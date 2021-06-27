@@ -21,6 +21,16 @@ class Crafts extends Component {
         const sorted = craftsByType.sort((a, b) => a.name > b.name ? 1 : -1)
         return sorted.map(craft => <CraftCard key={craft.id} craft={craft}/>)
     }
+
+    getDaysSince(start, from = new Date()) {
+        const start_date = new Date(start)
+        const from_date = new Date(from)
+
+        const timeDiff = from_date.getTime() - start_date.getTime()
+        const oneDay = 1000 * 60 * 60 * 24
+
+        return Math.round(timeDiff / oneDay)
+    }
     
     stageCrafts = (stage) => this.props.crafts.filter(craft => craft[stage] === true)
 
@@ -31,12 +41,12 @@ class Crafts extends Component {
 
     renderWIPCards = () => {
         const sortedWIP = this.stageCrafts('wip').sort((a, b) => a.date_started > b.date_started ? 1 : -1)
-        return sortedWIP.map(craft => < WIPCard key={craft.id} craft={craft}/>)
+        return sortedWIP.map(craft => < WIPCard key={craft.id} craft={craft} daysSince={this.getDaysSince}/>)
     }
 
     renderInventoryCards = () => {
         const sortedInventory = this.stageCrafts('inventory').sort((a, b) => a.date_completed > b.date_completed ? 1 : -1)
-        return sortedInventory.map(craft => < InventoryCard key={craft.id} craft={craft}/>)
+        return sortedInventory.map(craft => < InventoryCard key={craft.id} craft={craft} daysSince={this.getDaysSince}/>)
     }
 
     renderSoldCards = () => {

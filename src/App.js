@@ -2,9 +2,12 @@ import './App.css'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import HeaderMain from './components/HeaderMain'
 import NavBarMain from './components/NavBarMain'
-import CraftsContainer from './containers/Crafts'
-import CraftForm from './components/crafts/CraftForm'
 import Home from './containers/Home'
+import CraftsContainer from './containers/Crafts'
+import Gallery from './containers/Gallery'
+import Index from './containers/Index'
+import CraftForm from './components/crafts/CraftForm'
+
 import Footer from './components/Footer'
 
 
@@ -20,7 +23,9 @@ function App() {
         </header>
         <main>
           < Switch>
-            < Route exact path="/">< Home /></ Route>
+            < Route exact path="/"><br/>< Home /></ Route>
+            < Route path="/crafts/gallery">< Gallery /></ Route>
+            < Route path="/crafts/index">< Index /></ Route>
             < Route exact path="/crafts/new">< CraftForm /> </Route>
             < Route path="/crafts">< CraftsContainer /></ Route>
           </ Switch>

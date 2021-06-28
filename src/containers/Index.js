@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { fetchCrafts } from '../actions/craftActions'
 
-import CraftsByTypeFull from '../components/crafts/CraftsByTypeFull'
+import CraftsByType from '../components/crafts/CraftsByType'
 
 class Index extends Component {
     componentDidMount() {
@@ -14,7 +14,9 @@ class Index extends Component {
             <div>
                 <h2 className="main-header">Index</h2>
                 <div className="padding-left">
-                    < CraftsByTypeFull crafts={this.props.crafts}/>
+                    <div>
+                        < CraftsByType crafts={this.props.crafts}/>
+                    </div>
                 </div>
             </div>
         )

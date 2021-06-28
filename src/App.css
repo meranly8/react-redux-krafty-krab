@@ -8,7 +8,7 @@ html {
 
 .App-header {
   background-color: #264767;
-  height: 32vh;
+  height: 198px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -49,7 +49,7 @@ html {
   float: left;
   background-color: #366592;
   width: fit-content;
-  height: 32vh;
+  height: 198px;
   text-align: left;
   padding-left: 1%;
   padding-right: 1%;
@@ -105,15 +105,15 @@ html {
   grid-template-columns: auto auto auto;
   justify-content: space-evenly;
   align-content: center;
-  padding-left: 12%;
+  row-gap: 4%;
 }
 
 .grid-container-crafts {
   display: grid;
   grid-template-columns: auto auto;
   justify-content: space-evenly;
-  align-content: center;
-  padding-left: 0%;
+  align-items: center;
+  row-gap: 3%;
 }
 
 .grid-container-all {
@@ -122,4 +122,19 @@ html {
   justify-content: space-evenly;
   align-content: center;
   padding-left: 5%;
+}
+
+.image-gallery {
+  height: 20rem;
+  width: auto
+}
+
+.image-card {
+  height: 13rem;
+  width: auto
+}
+
+.image-footer {
+  height: 6rem;
+  width: auto
 }

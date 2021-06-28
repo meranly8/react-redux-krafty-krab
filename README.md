@@ -4,7 +4,7 @@ React-Redux front-end application using [rails-api-krafty-krab](https://github.c
 
 ![nasty patty][logo]
 
-[logo]: https://i.imgur.com/QslmyAR.jpg "Nasty Patty Embroidery"
+[logo]: https://i.imgur.com/QslmyARh.jpg "Nasty Patty Embroidery"
 
 ## Installation
 In terminal, in appropriate directory, clone the code for ***front-end*** & cd into directory.
@@ -21,7 +21,7 @@ cd rails-api-krafty-krab
 ```
 
 ## Usage
-Launch ***back-end*** web server in the terminal by calling
+Launch ***back-end*** web server in the other terminal by calling
 ```ruby
 rails s -p 30001
 ```

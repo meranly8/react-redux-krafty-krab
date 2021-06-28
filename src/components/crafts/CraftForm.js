@@ -56,7 +56,9 @@ class CraftForm extends Component {
                             <option value="Bracelet">Bracelet</option>
                             <option value="Embroidery">Embroidery</option>
                             <option value="Knit">Knit</option>
+                            <option value="Painting">Painting</option>
                             <option value="Pom Poms">Pom Poms</option>
+                            <option value="Other">Other</option>
                         </select>
                     </label></p>
                     <p><label>Description &nbsp;

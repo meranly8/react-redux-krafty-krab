@@ -1,6 +1,4 @@
 import React from 'react'
-import { connect } from 'react-redux'
-import { deleteCraft } from '../../actions/craftActions'
 
 const CraftCardFull = props => {
     const stage = () => {
@@ -28,19 +26,17 @@ const CraftCardFull = props => {
                 
                 <p className="margin-0"><b>Date Sold:</b> {props.craft.date_sold}</p>
                 
-                <p className="margin-0"><b>Price:</b> {props.craft.date_sold}</p>
+                <p className="margin-0"><b>Price:</b> ${props.craft.price}</p>
                 
                 <p className="margin-0"><b>Created:</b> {props.craft.created_at}</p>
                 
                 <p className="margin-0"><b>Description:</b> {props.craft.description}</p></small><br />
             </div>
             <div>
-                {props.craft.image_url === null || props.craft.image_url === "" ? null : <img src={props.craft.image_url} alt={props.craft.name}/> }<br />
-                
-                <button onClick={() => props.deleteCraft(props.craft.id)}>Delete</button><br /><br />
-            </div><br /><br />
+                {props.craft.image_url === null || props.craft.image_url === "" ? null : <img src={props.craft.image_url} alt={props.craft.name} className="image-card"/> }<br />
+            </div><br /><br /><hr /><br />
         </div>
     )
 }
 
-export default connect(null, { deleteCraft })(CraftCardFull)
+export default CraftCardFull

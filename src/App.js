@@ -25,7 +25,7 @@ function App() {
           < Switch>
             < Route exact path="/"><br/>< Home /></ Route>
             < Route path="/crafts/gallery">< Gallery /></ Route>
-            < Route path="/crafts/index/type">< Index /></ Route>
+            < Route path="/crafts/index">< Index /></ Route>
             < Route exact path="/crafts/new">< CraftForm /> </Route>
             < Route path="/crafts">< CraftsContainer /></ Route>
           </ Switch>

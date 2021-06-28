@@ -73,6 +73,11 @@ html {
   margin-top: 0%;
 }
 
+.align-index-left {
+  text-align: left;
+  padding-left: 30%;
+}
+
 .padding-left {
   padding-left: 7%;
 }

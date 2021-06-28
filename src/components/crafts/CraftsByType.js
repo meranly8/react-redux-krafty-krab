@@ -19,32 +19,47 @@ const CraftsByType = (props) => {
     return (
         <>
             <section>
-                <h2>Bracelets ({renderCraftsCards("Bracelet").length})</h2>
+                <h2>Bracelets <small>({renderCraftsCards("Bracelet").length})</small></h2>
                     <span>
                         {renderCraftsCards("Bracelet")}
                     </span>
                 {window.location.pathname === '/crafts/index' ? <hr /> : null}
             </section>
             <section>
-                <h2>Embroideries ({renderCraftsCards("Embroidery").length})</h2>
+                <h2>Embroideries <small>({renderCraftsCards("Embroidery").length})</small></h2>
                     <span>
                         {renderCraftsCards("Embroidery")}
                     </span>
                 {window.location.pathname === '/crafts/index' ? <hr /> : null}
             </section>
             <section>
-                <h2>Knits ({renderCraftsCards("Knit").length})</h2>
+                <h2>Knits <small>({renderCraftsCards("Knit").length})</small></h2>
                     <span>
                         {renderCraftsCards("Knit")}
                     </span>
                 {window.location.pathname === '/crafts/index' ? <hr /> : null}
             </section>
             <section>
-                <h2>Pom Poms ({renderCraftsCards("Pom Poms").length})</h2>
+                <h2>Paintings <small>({renderCraftsCards("Painting").length})</small></h2>
+                    <span>
+                        {renderCraftsCards("Painting")}
+                    </span>
+                {window.location.pathname === '/crafts/index' ? <hr /> : null}
+            </section>
+            <section>
+                <h2>Pom Poms <small>({renderCraftsCards("Pom Poms").length})</small></h2>
                     <span>
                         {renderCraftsCards("Pom Poms")}
                     </span>
+                {window.location.pathname === '/crafts/index' ? <hr /> : null}
             </section>
+            <section>
+                <h2>Other <small>({renderCraftsCards("Other").length})</small></h2>
+                    <span>
+                        {renderCraftsCards("Other")}
+                    </span>
+            </section>
+            
         </>
     )
 } 

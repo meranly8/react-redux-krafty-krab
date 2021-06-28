@@ -60,7 +60,7 @@ class Crafts extends Component {
                         < Switch >
                             < Route exact path="/crafts">
                                 <h3>{this.props.crafts.length} Crafts Total</h3>
-                                <div className='grid-container-all'>
+                                <div className='grid-container'>
                                     < CraftsByType crafts={this.props.crafts} />
                                 </div>
                             </ Route >

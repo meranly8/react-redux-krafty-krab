@@ -19,28 +19,28 @@ const CraftsByType = (props) => {
     return (
         <>
             <section>
-                <h2><u>Bracelets</u> ({renderCraftsCards("Bracelet").length})</h2>
+                <h2>Bracelets ({renderCraftsCards("Bracelet").length})</h2>
                     <span>
                         {renderCraftsCards("Bracelet")}
                     </span>
                 {window.location.pathname === '/crafts/index' ? <hr /> : null}
             </section>
             <section>
-                <h2><u>Embroideries</u> ({renderCraftsCards("Embroidery").length})</h2>
+                <h2>Embroideries ({renderCraftsCards("Embroidery").length})</h2>
                     <span>
                         {renderCraftsCards("Embroidery")}
                     </span>
                 {window.location.pathname === '/crafts/index' ? <hr /> : null}
             </section>
             <section>
-                <h2><u>Knits</u> ({renderCraftsCards("Knit").length})</h2>
+                <h2>Knits ({renderCraftsCards("Knit").length})</h2>
                     <span>
                         {renderCraftsCards("Knit")}
                     </span>
                 {window.location.pathname === '/crafts/index' ? <hr /> : null}
             </section>
             <section>
-                <h2><u>Pom Poms</u> ({renderCraftsCards("Pom Poms").length})</h2>
+                <h2>Pom Poms ({renderCraftsCards("Pom Poms").length})</h2>
                     <span>
                         {renderCraftsCards("Pom Poms")}
                     </span>

@@ -6,11 +6,24 @@ class Gallery extends Component {
     componentDidMount() {
         this.props.fetchCrafts()
     }
+
+    renderImages = () => {
+        const images = this.props.crafts.filter(craft => craft.image_url !== null)
+        return images.map(craft => {
+            return (
+                <img src={craft.image_url} alt={craft.name} key={craft.id} className="image-gallery"/>
+            )
+        })
+    }
     
     render() {
         return (
             <div className="padding-left">
-                <h2>Gallery</h2>
+                <br /><br /><br />
+                <div className="grid-container-crafts">
+                    {this.renderImages()}
+                </div>
+                <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
             </div>
         )
     }

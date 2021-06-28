@@ -5,7 +5,7 @@ const manageCrafts = (state = {crafts: [], loading: false, total: 0}, action) =>
 
             const sold = state.crafts.filter(craft => craft.sold === true)
             const prices = sold.map(craft => craft.price)
-            const sum = prices.reduce((total, price) => total + price)
+            const sum = prices.reduce(((total, price) => total + price), 0)
 
             return {...state, crafts: action.payload, loading: false, total: sum}
         case 'LOADING':

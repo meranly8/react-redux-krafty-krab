@@ -4,27 +4,30 @@ import { fetchCrafts } from '../actions/craftActions'
 
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import NavBarIndex from '../components/NavBarIndex'
+import CraftsByTypeFull from '../components/crafts/CraftsByTypeFull'
+import CraftsByStageFull from '../components/crafts/CraftsByStageFull'
 
 class Index extends Component {
     componentDidMount() {
         this.props.fetchCrafts()
     }
-    
+
     render() {
         return (
             <div>
                 <Router>
                     <h2 className="main-header">Index</h2>
                     < NavBarIndex /><br />
-                    
-                    < Switch >
-                        < Route exact path="/crafts/index/type">
-                            <h2>By Type</h2>
-                        </ Route >
-                        < Route exact path="/crafts/index/stage">
-                            <h2>By Stage</h2>
-                        </ Route >
-                    </ Switch >
+                    <div className="padding-left">
+                        < Switch >
+                            < Route exact path="/crafts/index/type">
+                                < CraftsByTypeFull crafts={this.props.crafts}/>
+                            </ Route >
+                            < Route exact path="/crafts/index/stage">
+                                < CraftsByStageFull crafts={this.props.crafts}/>
+                            </ Route >
+                        </ Switch >
+                    </div>
                 </Router>
             </div>
         )

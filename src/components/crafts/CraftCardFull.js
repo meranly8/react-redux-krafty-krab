@@ -38,7 +38,7 @@ const CraftCardFull = props => {
                 {props.craft.image_url === null || props.craft.image_url === "" ? null : <img src={props.craft.image_url} alt={props.craft.name}/> }<br />
                 
                 <button onClick={() => props.deleteCraft(props.craft.id)}>Delete</button><br /><br />
-            </div><br /><br /><br />
+            </div><br /><br />
         </div>
     )
 }

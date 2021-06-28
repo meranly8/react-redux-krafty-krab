@@ -9,7 +9,7 @@ class Gallery extends Component {
     
     render() {
         return (
-            <div>
+            <div className="padding-left">
                 <h2>Gallery</h2>
             </div>
         )

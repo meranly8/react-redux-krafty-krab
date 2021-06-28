@@ -12,8 +12,7 @@ In terminal, in appropriate directory, clone the code for ***front-end*** & cd i
 git clone git@github.com:meranly8/react-redux-krafty-krab.git
 cd react-redux-krafty-krab
 ```
-  
-  
+
 In another terminal, in appropriate directory, clone the code for ***back-end*** ([rails-api-krafty-krab](https://github.com/meranly8/rails-api-krafty-krab)) & cd into directory.
 ```ruby
 git clone git@github.com:meranly8/rails-api-krafty-krab.git
@@ -21,13 +20,13 @@ cd rails-api-krafty-krab
 ```
 
 ## Usage
-Launch ***back-end*** web server in the other terminal by calling
+Launch ***back-end*** web server using the terminal by calling
 ```ruby
 rails s -p 30001
 ```
 Navigate to [localhost:3001/](http://localhost:3001/) 
   
-Open web application ***front-end*** using the terminal by calling
+Open web application ***front-end*** in the other terminal by calling
 ```ruby
 npm start
 ```

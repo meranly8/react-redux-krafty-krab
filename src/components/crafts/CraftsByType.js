@@ -1,12 +1,19 @@
 import React from 'react'
 import CraftCard from '../crafts/CraftCard'
+import CraftCardFull from '../crafts/CraftCardFull'
 
 const CraftsByType = (props) => {
     
     function renderCraftsByType(craft_type) {
         const craftsByType = props.crafts.filter(craft => craft.craft_type === craft_type)
         const sorted = craftsByType.sort((a, b) => a.name > b.name ? 1 : -1)
-        return sorted.map(craft => <CraftCard key={craft.id} craft={craft}/>)
+
+        if (window.location.pathname === '/crafts') {
+            return sorted.map(craft => <CraftCard key={craft.id} craft={craft}/>)
+        } else if (window.location.pathname === '/crafts/index') {
+            return sorted.map(craft => <CraftCardFull key={craft.id} craft={craft}/>)
+        }
+        
     }
     
     return(

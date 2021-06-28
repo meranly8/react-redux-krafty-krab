@@ -16,7 +16,7 @@ const InventoryCard = (props) => {
 
             <small>{props.craft.description}</small><br />
 
-            {props.craft.image_url === null || props.craft.image_url === "" ? null : <img src={props.craft.image_url} alt={props.craft.name} /> }<br /><button onClick={() => props.deleteCraft(props.craft.id)}>Delete</button><br /><br /><br />
+            {props.craft.image_url === null || props.craft.image_url === "" ? null : <img src={props.craft.image_url} alt={props.craft.name} className="image-card"/> }<br /><button onClick={() => props.deleteCraft(props.craft.id)}>Delete</button><br /><br /><br />
         </div>
     )
 }

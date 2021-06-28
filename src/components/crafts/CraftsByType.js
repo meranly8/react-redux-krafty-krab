@@ -4,7 +4,7 @@ import CraftCardFull from '../crafts/CraftCardFull'
 
 const CraftsByType = (props) => {
     
-    function renderCraftsByType(craft_type) {
+    function renderCraftsCards(craft_type) {
         const craftsByType = props.crafts.filter(craft => craft.craft_type === craft_type)
         const sorted = craftsByType.sort((a, b) => a.name > b.name ? 1 : -1)
 
@@ -16,34 +16,37 @@ const CraftsByType = (props) => {
         
     }
     
-    return(
-        <div className="grid-container-all">
+    return (
+        <>
             <section>
-                <h4 className="margin-0"><u>Bracelets</u> ({renderCraftsByType("Bracelet").length})</h4>
+                <h2><u>Bracelets</u> ({renderCraftsCards("Bracelet").length})</h2>
                     <span>
-                        {renderCraftsByType("Bracelet")}
+                        {renderCraftsCards("Bracelet")}
                     </span>
-            </section>
-            <section className="App">
-                <h4 className="margin-0"><u>Embroideries</u> ({renderCraftsByType("Embroidery").length})</h4>
-                    <span>
-                        {renderCraftsByType("Embroidery")}
-                    </span>
+                {window.location.pathname === '/crafts/index' ? <hr /> : null}
             </section>
             <section>
-                <h4 className="margin-0"><u>Knits</u> ({renderCraftsByType("Knit").length})</h4>
+                <h2><u>Embroideries</u> ({renderCraftsCards("Embroidery").length})</h2>
                     <span>
-                        {renderCraftsByType("Knit")}
+                        {renderCraftsCards("Embroidery")}
                     </span>
+                {window.location.pathname === '/crafts/index' ? <hr /> : null}
             </section>
             <section>
-                <h4 className="margin-0"><u>Pom Poms</u> ({renderCraftsByType("Pom Poms").length})</h4>
+                <h2><u>Knits</u> ({renderCraftsCards("Knit").length})</h2>
                     <span>
-                        {renderCraftsByType("Pom Poms")}
+                        {renderCraftsCards("Knit")}
+                    </span>
+                {window.location.pathname === '/crafts/index' ? <hr /> : null}
+            </section>
+            <section>
+                <h2><u>Pom Poms</u> ({renderCraftsCards("Pom Poms").length})</h2>
+                    <span>
+                        {renderCraftsCards("Pom Poms")}
                     </span>
             </section>
-        </div>
+        </>
     )
-}
+} 
 
 export default CraftsByType

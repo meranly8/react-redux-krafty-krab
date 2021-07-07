@@ -17,10 +17,10 @@ class Crafts extends Component {
     }
 
     getDaysSince(start, from = new Date()) {
-        const start_date = new Date(start)
-        const from_date = new Date(from)
+        const startDate = new Date(start)
+        const fromDate = new Date(from)
 
-        const timeDiff = from_date.getTime() - start_date.getTime()
+        const timeDiff = fromDate.getTime() - startDate.getTime()
         const oneDay = 1000 * 60 * 60 * 24
 
         return Math.round(timeDiff / oneDay)
